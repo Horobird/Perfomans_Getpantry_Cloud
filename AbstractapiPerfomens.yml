@@ -1,0 +1,56 @@
+---
+config:
+  target: https://getpantry.cloud/apiv1/pantry/
+  phases:
+    - duration: 1
+      arrivalRate: 1
+      name: Pantry Test Warm-Up
+
+    - duration: 10
+      arrivalRate: 5
+      name: Pantry Test  Hot
+
+    - duration: 1
+      arrivalRate: 1
+      name: Pantry Test  Cool-down
+
+  payload:
+    path: param.csv
+    fields:
+        - value
+        - newvalue
+    loadAll: true
+  plugins:
+    ensure: {}
+  ensure:
+    thresholds:
+      - http.response_time.p95: 800
+    conditions:
+      - expression: http.response_time.p95 <= http.response_time.p99
+      - expression: vusers.failed <= 4
+      - expression: http.request_rate >= 2 and http.response_time.max < 800
+after:
+    flow:
+      - put: 
+          url: "{{ target }}7d06a7b9-c63f-4b6c-b830-d8e8c208bf7d/basket/HoroBasket1"
+          headers:
+            Content-Type: application/json
+          body: '{"key": "", "newkey": ""}'
+scenarios:
+  - name: Write and delete
+    flow:
+      - get:
+          url: "{{ target }}7d06a7b9-c63f-4b6c-b830-d8e8c208bf7d/basket/HoroBasket1"
+      - think: 3
+      - put:
+          url: "{{ target }}7d06a7b9-c63f-4b6c-b830-d8e8c208bf7d/basket/HoroBasket1"
+          headers:
+            Content-Type: application/json
+          body: '{"key": "{{value}}", "newkey": "{{newvalue}}"}'
+      #     capture:
+      #       - json: '$.key'
+      #         as: 'test'
+      #       - json: '$.newkey'
+      #         as: 'newtest'
+
+      # - log: "Result: {{test}} {{newtest}}"
