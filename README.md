@@ -7,4 +7,6 @@ _______
           
   ![imag](https://github.com/Horobird/Perfomans_Getpantry_Cloud/blob/main/2023-06-21_17h00_17.png)
   
-  and can also be received in the result.json or result.json.html.
+  and can also be received in the result.json or result.json.html.      
+  
+  :small_orange_diamond:In this example, at the start, one user per second is created for 10 seconds (warm-up), then the load increases sharply to ten users per second for 10 seconds and the transition to the cooling phase for 10 seconds, one user per second. The param.csv file is used to change the information.
