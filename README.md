@@ -8,4 +8,4 @@ _______
   ![imag](https://github.com/Horobird/Perfomans_Getpantry_Cloud/blob/main/2023-06-21_16h39_13.png)
   
   
-  and can also be received in the form of json or HTML in file <result>.
+  and can also be received in the result.json or result.json.HTML.
