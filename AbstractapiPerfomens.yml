@@ -2,7 +2,7 @@
 config:
   target: https://getpantry.cloud/apiv1/pantry/
   phases:
-    - duration: 1
+    - duration: 10
       arrivalRate: 1
       name: Pantry Test Warm-Up
 
@@ -10,7 +10,7 @@ config:
       arrivalRate: 5
       name: Pantry Test  Hot
 
-    - duration: 1
+    - duration: 10
       arrivalRate: 1
       name: Pantry Test  Cool-down
 
