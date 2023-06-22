@@ -1,7 +1,7 @@
 # Perfomans_Getpantry_Cloud
 
 _______
-[<img src="https://img.shields.io/badge/Artillery v2.0.0-32-8B4513?style=flat-square& &logoColor=FFFF00"/>](https://en.wikipedia.org/wiki/JavaScript)   [<img src="https://img.shields.io/badge/Node v19.8.1-7B68EE?style=flat-square&logo=Node .js&logoColor=00FF00"/>](https://nodejs.org/en)   [<img src="https://img.shields.io/badge/YAML-3CB371?style=flat-square&logo=yaml&logoColor=FFA500"/>](https://github.com/yaml/)       
+[<img src="https://img.shields.io/badge/Artillery v2.0.0-32-8B4513?style=flat-square& &logoColor=FFFF00"/>](https://www.artillery.io/docs)   [<img src="https://img.shields.io/badge/Node v19.8.1-7B68EE?style=flat-square&logo=Node .js&logoColor=00FF00"/>](https://nodejs.org/en)   [<img src="https://img.shields.io/badge/YAML-3CB371?style=flat-square&logo=yaml&logoColor=FFA500"/>](https://github.com/yaml/)       
   :small_orange_diamond:Here is one example of load testing with the help of tools from [Artillery](https://www.artillery.io/).   
         
   :small_orange_diamond:The [Pantry](https://getpantry.cloud/) resource is selected as the test object. With the help of Artillery, users are created who, through the API, change information in the authorized pantry.     
